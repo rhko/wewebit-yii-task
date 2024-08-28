@@ -17,7 +17,7 @@ git clone https://github.com/rhko/wewebit-yii-task.git
 
 configure database connection from config/db.php
 ~~~
-eturn [
+return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=DB_NAME',
     'username' => YOUR_USERNAME,

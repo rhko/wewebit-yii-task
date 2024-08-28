@@ -28,12 +28,10 @@ class PostController extends Controller
     
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Post::find(),
-        ]);
-
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'dataProvider' => new ActiveDataProvider([
+                'query' => Post::find(),
+            ]),
         ]);
     }
 

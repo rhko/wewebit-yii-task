@@ -47,21 +47,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <hr>
 
     <h2>Comments</h2>
-    <?= $this->render('_comment_form', [
-            'model' => new \app\models\Comment(),
-            'postId' => $model->id
-        ]) ?>
+    <?= $this->render('comments/_comment_form', [
+        'model' => new \app\models\Comment(),
+        'postId' => $model->id
+    ]) ?>
 
-    <?= GridView::widget([
-        'dataProvider' => new ActiveDataProvider(['query' => $model->getComments()]),
-        'columns' => [
-            'id',
-            'body:ntext',
-            [
-                'attribute' => 'created_at',
-                'format' => ['datetime', 'php:Y-m-d H:i:s'],
-            ],
-        ],
-    ]); ?>
+    <?= $this->render('comments/_list', [
+        'model' => $model,
+    ]) ?>
 
 </div>
